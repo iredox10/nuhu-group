@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partial/header.ejs') %>
+<body>
+<%- include('./partial/nav.ejs') %>
+
+    <div class="container text-capitalize">
+        <h1 class="text-center">add new staff here</h1>
+        <form action="/add-staff" method="POST">
+            <div class="name d-lg-flex gap-3 align-items-center justify-content-between">
+            <div class="mb-3 flex-grow-1">
+              <label for="firstName" class="form-label">first name</label>
+              <input type="text" name="firstName" id="firstName" class="form-control" placeholder="" aria-describedby="helpId">
+              <small id="helpId" class="text-muted"></small>
+            </div>
+
+            <div class="mb-3 flex-grow-1">
+              <label for="surName" class="form-label">surname</label>
+              <input type="text" name="surName" id="surName" class="form-control" placeholder="" aria-describedby="helpId">
+              <small id="helpId" class="text-muted"></small>
+            </div>
+            </div>
+
+            <div class="contact d-lg-flex gap-3 align-items-center justify-content-between">
+                <div class="mb-3  flex-grow-1">
+                  <label for="email" class="form-label">email</label>
+                  <input type="email" name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId">
+                  <small id="helpId" class="text-muted"></small>
+                </div>
+                <div class="mb-3  flex-grow-1">
+                  <label for="address" class="form-label">address</label>
+                  <input type="text" name="address" id="address" class="form-control" placeholder="" aria-describedby="helpId">
+                  <small id="helpId" class="text-muted"></small>
+                </div>
+            </div>
+
+            <div class=" d-lg-flex gap-3 align-items-center justify-content-between">
+            <div class="mb-3 flex-grow-1">
+              <label for="staffNumber" class="form-label">staff number</label>
+              <input type="text" name="staffNumber" id="staffNumber" class="form-control" placeholder="" aria-describedby="helpId">
+              <small id="helpId" class="text-muted"></small>
+            </div>
+            <div class="mb-3 flex-grow-1">
+              <label for="password" class="form-label">password</label>
+              <input type="password" name="password" id="password" class="form-control" placeholder="" aria-describedby="helpId">
+              <small id="helpId" class="text-muted"></small>
+            </div>
+            </div>
+            <div class="mb-3">
+              <label for="department" class="form-label">department</label>
+              <input type="text" name="department" id="department" class="form-control" placeholder="" aria-describedby="helpId">
+              <small id="helpId" class="text-muted"></small>
+            </div>
+            <button class="btn btn-outline-dark form-control text-capitalize">register</button>
+        </form>    
+    </div>
+</body>
+</html>

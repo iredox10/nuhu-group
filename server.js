@@ -7,8 +7,8 @@ const routes = require('./routes/routes')
 require('dotenv').config()
 
 // middlewares
-app.use(express.urlencoded({extended:false}))
 app.use(methodOverride('_method'))
+app.use(express.urlencoded({extended:false}))
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(routes)
@@ -17,8 +17,7 @@ app.use(routes)
 // connect to database
 mongoose
 	.connect(process.env.DBS_URL)
-	.then((result) => console.log('connect'))
+	.then((result) => app.listen(3000))
 	.catch((err) => console.log(err));
 
 
-app.listen(4000)

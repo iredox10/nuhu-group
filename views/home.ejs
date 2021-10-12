@@ -1,26 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <title>home page</title>
-</head>
-<body>
-    <header class="d-flex align-items-center justify-content-between shadow-sm p-3">
-        <div class="logo">
-            <img src="" alt="logo">
-        </div>
-        <nav class="nav justify-content-center|justify-content-end">
-          <a class="nav-link" href="/">home</a>
-          <a class="nav-link" href="/about-us">about us</a>
-          <a class="nav-link disabled" href="/admin">admin</a>
-        </nav>
-    </header>
-
-    <main class="container">
-        <h1>welcone to ivei attendance project</h1>
+<%- include('./partial/header.ejs') %> 
+<body class="">
+    <%- include('./partial/nav.ejs') %> 
+    <main class="container-fluid bg-warning vh-100 text-center text-lg-start text-capitalize py-5 text-white">
+        <h1>welcome to ivei attendance project</h1>
+        <p class="lead">this is staff attendace record case study of ivei</p>
+        <a href="/log-in" class="btn btn-dark">log in</a>
     </main>
 </body>
 </html>

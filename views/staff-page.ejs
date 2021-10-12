@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partial/header.ejs') %>
+
+    <body class="">
+        <%- include('./partial/nav.ejs') %>
+        <h1 class="p-2 bg-dark text-white text-capitalize"><%= staff.firstName  %> <%= staff.surName %> page</h1>
+        <div class="container text-capitalize">
+            <h2 class="text-center">detail information</h2>
+            <div class="group my-4 d-lg-flex justify-content-around ">
+                <div class="first">
+                    <p><span class="fw-bold">first name: </span><%= staff.firstName %> </p>
+                    <p><span class="fw-bold">surname name: </span><%= staff.surName %> </p>
+                    <p><span class="fw-bold">email: </span><%= staff.email %> </p>
+                </div> 
+                <div class="second">
+                    <p><span class="fw-bold">staff number: </span>
+                        <%= staff.staffNumber %>
+                    </p>
+                    <p><span class="fw-bold">department </span>
+                        <%= staff.department %>
+                    </p>
+                </div>
+            </div>
+
+            <div class="attendance">
+                <h1>attendace page</h1>
+            </div>
+        </div>
+    </body>
+</html>

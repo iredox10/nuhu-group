@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partial/header.ejs') %>
+<body>
+    <%- include('./partial/nav.ejs') %>
+  <div class="container">
+    <h1>staffs page</h1>
+    <table class="table table-bordered table-responsive">
+      <thead>
+        <tr>
+          <th>first name</th>
+          <th>surname</th>
+          <th>email</th>
+          <th>address</th>
+          <th>department</th>
+          <th>password</th>
+        </tr>
+        <% staffs.forEach(staff =>{ %>
+        </thead>
+        <tbody>
+            <tr>
+              <td scope="row"><%= staff.firstName  %> </td>
+              <td><%= staff.surName %> </td>
+              <td><%= staff.email %> </td>
+              <td><%= staff.address %> </td>
+              <td><%= staff.department %> </td>
+              <td><%= staff.password %> </td>
+              <td><form action="/delete/<%=staff.id%>?_method=DELETE" method="POST"><button>delete</button></form></td>
+            </tr>
+          </tbody>
+        </table>
+        
+  <%  }) %> 
+  </div>
+</body>
+
+</html>
