@@ -1,9 +1,27 @@
 const Staff = require('../models/staffModel')
+const Attendance = require('../models/attendaceModel')
 
 exports.get_home = (req, res) => {
 	res.render('home', {title:'home'});
 };
 exports.get_admin = (req, res) => {
+    	const reject = () => {
+				res.setHeader('www-authenticate', 'Basic');
+				res.sendStatus(401);
+			};
+			const authorization = req.headers.authorization;
+			if (!authorization) {
+				return reject();
+			}
+			const [username, password] = Buffer.from(
+				authorization.replace('Basic', ''),
+				'base64'
+			)
+				.toString()
+				.split(':');
+			if (!(username == 'project-group' && password === 'project-group')) {
+				return reject();
+			}
 	res.render('admin', {title:'admin'});
 };
 
@@ -24,8 +42,7 @@ exports.post_add_staff = async (req,res) =>{
 					password: req.body.password,
 				});
            let staff = await newStaff.save()
-           res.send(staff)
-           console.log(staff);
+           res.redirect('/view-staffs')
     }
     catch(err){
         console.log(err)
@@ -74,5 +91,39 @@ exports.get_staff_page =async (req,res) =>{
         res.render('staff-page', {staff, title:staff.firstName})
     }catch(err){
 
+    }
+}
+
+
+exports.post_attendance = async (req,res) =>{
+
+    let attendance = new Attendance({
+        name:req.body.name,
+        date: req.body.date
+    })
+    try{
+        await attendance.save()
+        res.send('attend')
+    }catch(err){
+        console.log(err)
+    }
+    
+}
+
+exports.get_attendance = async (req,res) =>{
+    try{
+        let records = await Attendance.find();
+        res.render('records', {records, title:'records'})
+    }catch(err){
+        console.log(err)
+    }
+}
+
+exports.delete_record = async (req,res) =>{
+    try{
+        await Attendance.findByIdAndDelete(req.params.id)
+         res.redirect('/view-attendance')      
+    }catch(err){
+        console.log(err)
     }
 }

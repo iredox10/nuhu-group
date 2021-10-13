@@ -16,4 +16,9 @@ route.get('/log-in', controller.get_log_in)
 route.post('/log-in', controller.post_log_in)
 
 route.get('/staff-page/:id', controller.get_staff_page)
+
+//! attendance route 
+route.post('/attendance', controller.post_attendance)
+route.get('/view-attendance', controller.get_attendance)
+route.delete('/delete-record/:id', controller.delete_record)
 module.exports = route

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partial/header.ejs') %>
+
+    <body>
+        <%- include('./partial/nav.ejs') %>
+        <div class="container">
+        <h2>record page</h2>
+        <% records.forEach(record =>{ %>
+            <table class="table table-active">
+                <tr>
+                    <th class="bg-dark text-white text-center text-capitalize">name</th>
+                    <th class="bg-dark text-white text-center text-capitalize">date</th>
+                    <th class="bg-dark text-white text-center text-capitalize">time</th>
+                </tr>
+                <tr>
+                    <td class="text-center text-capitalize"><%= record.name %> </td>
+                    <td class="text-center text-capitalize"><%= record.date %> </td>
+                    <td class="text-center text-capitalize"><%= record.createAt %> </td>
+                </tr>
+            </table>
+       <% }) %> 
+    </div>
+    </body>
+</html>

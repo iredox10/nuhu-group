@@ -4,7 +4,7 @@
 
     <body class="">
         <%- include('./partial/nav.ejs') %>
-        <h1 class="p-2 bg-dark text-white text-capitalize"><%= staff.firstName  %> <%= staff.surName %> page</h1>
+        <h1 class="p-2 bg-dark text-white text-capitalize"><%= staff.firstName  %> <%= staff.surName %> welcome</h1>
         <div class="container text-capitalize">
             <h2 class="text-center">detail information</h2>
             <div class="group my-4 d-lg-flex justify-content-around ">
@@ -25,6 +25,15 @@
 
             <div class="attendance">
                 <h1>attendace page</h1>
+                <div class="attendant">
+                    <form action="/attendance" method="POST">
+                    <label for="name">name</label>
+                    <input type="text"  id="name" name="name" value="<%= staff.firstName %> <%= staff.surName %>  ">
+                    <label for="date">select date</label>
+                    <input type="date"  name="date" id="date">
+                    <button>submit</button>
+                    </form>
+                </div>
             </div>
         </div>
     </body>
