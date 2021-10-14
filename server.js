@@ -16,8 +16,8 @@ app.use(routes)
 
 // connect to database
 mongoose
-	.connect(process.env.LOCAL_URL)
-	.then((result) => app.listen(process.env.PORT || 3000))
+	.connect(process.env.LOCAL_URL|| process.env.DB_URL )
+	.then((result) => app.listen(process.env.PORT || 4000))
 	.catch((err) => console.log(err));
 
 
