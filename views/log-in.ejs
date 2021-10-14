@@ -3,8 +3,8 @@
 <%- include('./partial/header.ejs') %>
     <body class="">
         <%- include('./partial/nav.ejs') %>
-        <div class="container">
-        <h1>log in here </h1>
+        <div class="container  text-capitalize">
+        <h1 class="text-center my-3">log in here </h1>
         <form action="/log-in" method="POST">
             <div class="mb-3">
               <label for="email" class="form-label">email</label>
@@ -16,7 +16,7 @@
               <input type="password" name="password" id="password" class="form-control" placeholder="" aria-describedby="helpId">
               <small id="helpId" class="text-muted"></small>
             </div>
-            <button class="btn btn-outline-dark">log in</button>
+            <button class="btn btn-outline-dark text-capitalize">log in</button>
         </form>
         </div>
     </body>

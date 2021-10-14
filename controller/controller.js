@@ -5,23 +5,23 @@ exports.get_home = (req, res) => {
 	res.render('home', {title:'home'});
 };
 exports.get_admin = (req, res) => {
-    	const reject = () => {
-				res.setHeader('www-authenticate', 'Basic');
-				res.sendStatus(401);
-			};
-			const authorization = req.headers.authorization;
-			if (!authorization) {
-				return reject();
-			}
-			const [username, password] = Buffer.from(
-				authorization.replace('Basic', ''),
-				'base64'
-			)
-				.toString()
-				.split(':');
-			if (!(username == 'project-group' && password === 'project-group')) {
-				return reject();
-			}
+    	// const reject = () => {
+		// 		res.setHeader('www-authenticate', 'Basic');
+		// 		res.sendStatus(401);
+		// 	};
+		// 	const authorization = req.headers.authorization;
+		// 	if (!authorization) {
+		// 		return reject();
+		// 	}
+		// 	const [username, password] = Buffer.from(
+		// 		authorization.replace('Basic', ''),
+		// 		'base64'
+		// 	)
+		// 		.toString()
+		// 		.split(':');
+		// 	if (!(username == 'project-group' && password === 'project-group')) {
+		// 		return reject();
+		// 	}
 	res.render('admin', {title:'admin'});
 };
 
@@ -103,7 +103,7 @@ exports.post_attendance = async (req,res) =>{
     })
     try{
         await attendance.save()
-        res.send('attend')
+        res.render('successful', {title:'successful'})
     }catch(err){
         console.log(err)
     }

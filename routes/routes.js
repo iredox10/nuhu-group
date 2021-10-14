@@ -21,4 +21,5 @@ route.get('/staff-page/:id', controller.get_staff_page)
 route.post('/attendance', controller.post_attendance)
 route.get('/view-attendance', controller.get_attendance)
 route.delete('/delete-record/:id', controller.delete_record)
+
 module.exports = route

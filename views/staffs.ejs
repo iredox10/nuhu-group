@@ -4,28 +4,29 @@
 <body>
     <%- include('./partial/nav.ejs') %>
   <div class="container">
-    <h1>staffs page</h1>
-    <table class="table table-bordered table-responsive">
-      <thead>
-        <tr>
-          <th>first name</th>
-          <th>surname</th>
-          <th>email</th>
-          <th>address</th>
-          <th>department</th>
-          <th>password</th>
-        </tr>
-        <% staffs.forEach(staff =>{ %>
+    <h1 class="text-center fw-bold my-3 text-capitalize">staffs page</h1>
+    <% staffs.forEach(staff =>{ %>
+      <table class="table table-bordered table-responsive text-capitalize">
+        <thead>
+          <tr class="text-center bg-dark text-white">
+            <th>first name</th>
+            <th>surname</th>
+            <th>email</th>
+            <th>address</th>
+            <th>department</th>
+            <th>password</th>
+            <th>delete</th>
+          </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr class="text-center bg-light">
               <td scope="row"><%= staff.firstName  %> </td>
               <td><%= staff.surName %> </td>
               <td><%= staff.email %> </td>
               <td><%= staff.address %> </td>
               <td><%= staff.department %> </td>
               <td><%= staff.password %> </td>
-              <td><form action="/delete/<%=staff.id%>?_method=DELETE" method="POST"><button>delete</button></form></td>
+              <td><form action="/delete/<%=staff.id%>?_method=DELETE" method="POST"><button class="btn btn-outline-dark text-capitalize">delete</button></form></td>
             </tr>
           </tbody>
         </table>
