@@ -9,6 +9,14 @@ const attendanceSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    department: {
+        type: String,
+        required: true
+    },
+    course: {
+        type: String,
+        required: true
+    },
     createAt : {
         type:Date,
         default : Date.now()

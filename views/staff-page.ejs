@@ -6,6 +6,7 @@
         <%- include('./partial/nav.ejs') %>
         <h1 class="p-2 bg-dark text-white text-capitalize"><%= staff.firstName  %> <%= staff.surName %> welcome</h1>
         <div class="container text-capitalize">
+            <div class="info">
             <h2 class="text-center">detail information</h2>
             <div class="group my-4 d-lg-flex justify-content-around ">
                 <div class="first">
@@ -21,20 +22,39 @@
                         <%= staff.department %>
                     </p>
                 </div>
-            </div>
-
-            <div class="attendance">
-                <h1>attendace page</h1>
-                <div class="attendant">
-                    <form action="/attendance" method="POST">
-                    <label for="name">name</label>
-                    <input type="text"  id="name" name="name" value="<%= staff.firstName %> <%= staff.surName %>  ">
-                    <label for="date">select date</label>
-                    <input type="date"  name="date" id="date">
-                    <button class="btn btn-dark text-capitalize">attend</button>
-                    </form>
+</div>
+</div>
+                <div class="attendance">
+                    <h1>attendace page</h1>
+                    <div class="attendant container">
+                        <form action="/attendance" method="POST">
+                            <div class="flex d-flex justify-content-around gap-2">
+                                <div class="first">
+                                    <div class="mb-3">
+                                        <label for="name">name</label>
+                                        <input type="text" id="name" name="name" value="<%= staff.firstName %> <%= staff.surName %>  ">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="date">select date</label>
+                                        <input type="date" name="date" id="date">
+                                    </div>
+                                </div>
+                                <div class="second">
+                                    <div class="mb-3">
+                                        <label for="department">department</label>
+                                        <input type="text" name="department" id="course">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="course">course</label>
+                                        <input type="text" name="course" id="course">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-dark text-capitalize ">attend</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </div>
+                </div>
+           
     </body>
 </html>
